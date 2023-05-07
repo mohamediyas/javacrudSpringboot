@@ -1,0 +1,24 @@
+@GetMapping("/")
+	public Greet greet(
+			 @RequestParam(value = "name" ,required = false) String name
+			 
+			 )
+	{
+		
+		String greetMessage = name == null || name.isBlank() ? "Hello" : name;
+		
+		return new Greet(greetMessage,List.of("java","javascript"),new Person("alex",21));
+	}
+	
+	record Person(String name,int age) {}
+	
+	record Greet(String greet, List<String> favProgrammingLanguages,Person person) {}
+	
+
+	
+	last class stopped in 47
+	
+	last class stopped in 68
+	
+	
+	
